@@ -332,7 +332,6 @@ let serverInstance = null;
 
 function start(){
 	serverInstance = app.listen(app.get('port'), function(){
-		console.log(`Example app listening at http://localhost:${port}`)	
 	})
 }
 
