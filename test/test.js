@@ -4,6 +4,10 @@ const expect = chai.expect;
 const chaiHttp = require('chai-http');
 chai.use(chaiHttp);
 const server = require('../index');
+
+//app.set('port', (process.env.PORT || 80));
+//const baseUrl = `http://localhost:${port}`;
+
 const baseUrl = 'http://localhost:3000';
 const chaiJsonSchemaAjv = require('chai-json-schema-ajv');
 chai.use(chaiJsonSchemaAjv);

@@ -6,7 +6,11 @@ Leon Bellmann
 */
 const express = require('express');
 const app = express();
-const port = 3000;
+
+//const port = 3000;
+// needs to be changed in case of running the tests
+app.set('port', (process.env.PORT || 80));
+
 const bodyParser = require('body-parser');
 const User = require('./Models/User');
 const Post = require('./Models/Post');
@@ -327,7 +331,7 @@ let serverInstance = null;
 
 
 function start(){
-	serverInstance = app.listen(port, () => {
+	serverInstance = app.listen(app.get('port'), function(){
 		console.log(`Example app listening at http://localhost:${port}`)	
 	})
 }
